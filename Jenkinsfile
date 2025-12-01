@@ -2,15 +2,10 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout Code') {
-            steps {
-                git branch: 'main',
-                    url: 'https://github.com/Gowthamps2003/jenkins-email-notification.git'
-            }
-        }
 
         stage('Run Script') {
             steps {
+                sh 'ls -l'              // DEBUG: show files
                 sh 'chmod +x hello.sh'
                 sh './hello.sh'
             }
